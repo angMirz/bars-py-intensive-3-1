@@ -4,20 +4,29 @@ class Tuple:
     При создании принимается последовательность объектов.
     """
 
-    def count(self, value) -> int:
-        """
-        Возвращает количество появлений value в объекте.
+    def __init__(self, values):
+        self.values = values
 
-        Args:
-            value: количество вхождений в объекте
-        """
-        raise NotImplementedError
+    def count(self, value) -> int:
+        count = 0
+
+        for item in self.values:
+            if (item == value):
+                count += 1
+        
+        return count
 
     def index(self, value) -> int:
-        """
-        Возвращает индекс первого вхождения элемента в объекте.
+        index = 0
 
-        Args:
-            value: индекс искомого элемента
-        """
-        raise NotImplementedError
+        for item in self.values:
+            if (item == value):
+                return index
+            index += 1
+        
+        raise ValueError
+
+    
+custom_tuple = Tuple([1,6,7,8,7,9])
+print(custom_tuple.index(8))
+print(custom_tuple.count(7))

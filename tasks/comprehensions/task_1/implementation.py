@@ -1,11 +1,6 @@
 def flatten_list(matrix: list) -> list:
-    """
-    Преобразует матрицу (список списков) в линейный список.
+    return [k for i in matrix for k in i]
 
-    Args:
-         matrix: список, элементами которого являются списки
 
-    Returns:
-        линейный список
-    """
-    raise NotImplementedError
+test = [[1,2], [3,4]]
+print(flatten_list(test))
